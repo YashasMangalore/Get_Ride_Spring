@@ -1,11 +1,13 @@
 package com.example.GetRide.Model;
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Data;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name="coupon")
 @FieldDefaults(level = AccessLevel.PRIVATE)

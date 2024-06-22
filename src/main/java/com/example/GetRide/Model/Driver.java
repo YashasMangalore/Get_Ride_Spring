@@ -1,8 +1,7 @@
 package com.example.GetRide.Model;
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Data;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.util.ArrayList;
@@ -10,6 +9,9 @@ import java.util.List;
 
 @Entity
 @Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name="driver")
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Driver

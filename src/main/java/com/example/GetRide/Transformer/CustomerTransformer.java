@@ -1,11 +1,11 @@
-package com.example.GetRide.Converter;
+package com.example.GetRide.Transformer;
 
 
 import com.example.GetRide.Dto.Requests.AddCustomerRequest;
 import com.example.GetRide.Dto.Responses.CustomerResponse;
 import com.example.GetRide.Model.Customer;
 
-public class CustomerConverter
+public class CustomerTransformer
 {
     public static CustomerResponse customerToCustomerResponse(Customer customer)
     {

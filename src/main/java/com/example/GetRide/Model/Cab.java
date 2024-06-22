@@ -1,12 +1,15 @@
 package com.example.GetRide.Model;
 
 import com.example.GetRide.Enum.CabType;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Data;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Table(name="cab")
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
@@ -24,5 +27,6 @@ public class Cab
 
     @OneToOne
     @JoinColumn
+    @JsonIgnore
     Driver driver;
 }

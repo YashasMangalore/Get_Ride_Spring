@@ -1,6 +1,7 @@
 package com.example.GetRide.Model;
 
 import com.example.GetRide.Enum.BookingStatus;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Data;
@@ -31,9 +32,11 @@ public class Booking
 
     @ManyToOne
     @JoinColumn
+    @JsonIgnore
     Customer customer;
 
     @ManyToOne
     @JoinColumn
+    @JsonIgnore
     Driver driver;
 }

@@ -1,20 +1,19 @@
 package com.example.GetRide.Dto.Responses;
 
 import com.example.GetRide.Enum.Gender;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@FieldDefaults(level= AccessLevel.PRIVATE)
 public class CustomerResponse
 {
-    private String customerName;
-    private Integer customerAge;
-    private Gender customerGender;
-    private String customerEmailId;
-    private String customerMobileNumber;
+    String customerName;
+    Integer customerAge;
+    Gender customerGender;
+    String customerEmailId;
+    String customerMobileNumber;
 }

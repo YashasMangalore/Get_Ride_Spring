@@ -1,6 +1,6 @@
 package com.example.GetRide.Service;
 
-import com.example.GetRide.Converter.CustomerConverter;
+import com.example.GetRide.Transformer.CustomerTransformer;
 import com.example.GetRide.Dto.Requests.AddCustomerRequest;
 import com.example.GetRide.Dto.Responses.CustomerResponse;
 import com.example.GetRide.Enum.Gender;
@@ -21,7 +21,7 @@ public class CustomerService
     public String addCustomer(AddCustomerRequest customerRequest)
     {
         //dto->entity
-        Customer customer=CustomerConverter.customerRequestToCustomer(customerRequest);
+        Customer customer= CustomerTransformer.customerRequestToCustomer(customerRequest);
         customerRepository.save(customer);
         return "Customer saved successfully";
     }
@@ -32,7 +32,7 @@ public class CustomerService
         {
             Customer customer = customerRepository.findByCustomerEmailId(customerEmailId);
             //entity->response
-            return customer != null ? CustomerConverter.customerToCustomerResponse(customer) : null;
+            return customer != null ? CustomerTransformer.customerToCustomerResponse(customer) : null;
         }
         catch (Exception e)
         {
@@ -49,7 +49,7 @@ public class CustomerService
             customerList = customerRepository.getByGenderAgeGreater(String.valueOf(gender), age);
             for (Customer customer : customerList)
             {
-                customerResponseList.add(CustomerConverter.customerToCustomerResponse(customer));
+                customerResponseList.add(CustomerTransformer.customerToCustomerResponse(customer));
             }
         }
         else
@@ -57,7 +57,7 @@ public class CustomerService
             customerList = customerRepository.getByGenderAgeLower(gender, age);
             for(Customer customer:customerList)
             {
-                customerResponseList.add(CustomerConverter.customerToCustomerResponse(customer));
+                customerResponseList.add(CustomerTransformer.customerToCustomerResponse(customer));
             }
         }
 
