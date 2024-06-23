@@ -4,6 +4,7 @@ import com.example.GetRide.Dto.Requests.AddCustomerRequest;
 import com.example.GetRide.Dto.Responses.CustomerResponse;
 import com.example.GetRide.Enum.Gender;
 import com.example.GetRide.Service.CustomerService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,11 +13,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/v1/customer")
 public class CustomerController     //or Transformer same but different name
 {
-    @Autowired
-    private CustomerService customerService;
+    private final CustomerService customerService;
 
     @PostMapping
     public ResponseEntity<String> addCustomer(@RequestBody AddCustomerRequest customerRequest)

@@ -22,6 +22,8 @@ public class Driver
     @Column(unique = true,nullable = false)
     String driverMobileNumber;
     @Column(unique = true,nullable = false)
+    String driverEmailId;
+    @Column(unique = true,nullable = false)
     String driverLicense;
 
     String driverName;

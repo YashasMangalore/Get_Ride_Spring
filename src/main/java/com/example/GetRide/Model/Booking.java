@@ -3,14 +3,16 @@ package com.example.GetRide.Model;
 import com.example.GetRide.Enum.BookingStatus;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Data;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.util.Date;
 
 @Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name="booking")
 @FieldDefaults(level = AccessLevel.PRIVATE)
@@ -24,7 +26,7 @@ public class Booking
     @CreationTimestamp
     Date bookedAt;
 
-    String bookingIdGenerated;
+    String bookingIdGenerated;//UUID
     String bookingPickUpLocation;
     String bookingDropOffLocation;
     Double bookingTotalDistance;

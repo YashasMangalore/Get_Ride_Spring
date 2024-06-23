@@ -6,6 +6,7 @@ import com.example.GetRide.Dto.Responses.CustomerResponse;
 import com.example.GetRide.Enum.Gender;
 import com.example.GetRide.Model.Customer;
 import com.example.GetRide.Repository.CustomerRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,10 +14,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class CustomerService
 {
-    @Autowired
-    private CustomerRepository customerRepository;
+    private final CustomerRepository customerRepository;
 
     public String addCustomer(AddCustomerRequest customerRequest)
     {

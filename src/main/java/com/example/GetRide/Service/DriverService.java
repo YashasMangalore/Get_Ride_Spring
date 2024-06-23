@@ -7,14 +7,15 @@ import com.example.GetRide.Transformer.DriverTransformer;
 import com.example.GetRide.Dto.Requests.AddDriverRequest;
 import com.example.GetRide.Model.Driver;
 import com.example.GetRide.Repository.DriverRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 public class DriverService
 {
-    @Autowired
-    private DriverRepository driverRepository;
+    private final DriverRepository driverRepository;
 
     public String addDriverAndCab(AddDriverRequest driverRequest)
     {

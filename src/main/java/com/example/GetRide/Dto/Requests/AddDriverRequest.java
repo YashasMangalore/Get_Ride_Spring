@@ -11,6 +11,7 @@ public class AddDriverRequest
     String driverName;
     Integer driverAge;
     String driverMobileNumber;
+    String driverEmailId;
     String driverLicense;
     AddCabRequest cabRequest;
 }

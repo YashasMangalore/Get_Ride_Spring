@@ -13,6 +13,7 @@ public class DriverTransformer
                 .driverAge(driverRequest.getDriverAge())
                 .driverMobileNumber(driverRequest.getDriverMobileNumber())
                 .driverLicense(driverRequest.getDriverLicense())
+                .driverEmailId(driverRequest.getDriverEmailId())
                 .build();
     }
 
